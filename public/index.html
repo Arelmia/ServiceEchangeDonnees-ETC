@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Players</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <div class="loginContainer">
+        <button onclick="logout()">Se déconnecter</button>
+        <button onclick="redirect(profilURL)">Profil</button>
+        <button onclick="unsubscribe()">Se désabonner</button>
+    </div>
+    <form id="detailsContainer" class="container" enctype="multipart/form-data" method="post" onsubmit="onSubmit()">
+        <div>
+            <img id="profile_pic_view" class="avatar" src="./defaultUserAvatar.png" alt="Default Avatar">
+        </div>
+
+        <div class="inputContainer">
+            <label for="username">Username: </label>
+            <input required minlength="3" maxlength="50"
+                   pattern="^[a-zA-Z0-9]*$"
+                   type="text" id="username"
+                   name="username">
+        </div>
+
+        <div class="inputContainer">
+            <label for="password">Password: </label>
+            <input required minlength="3" maxlength="50"
+                   type="text"
+                   id="password"
+                   name="password">
+        </div>
+
+        <div class="inputContainer">
+            <label for="email">Email: </label>
+            <input required
+                   type="email"
+                   id="email"
+                   name="email">
+        </div>
+
+        <div class="inputContainer">
+            <label for="level">Level: </label>
+            <input value="1" min="1" max="100"
+                   type="number"
+                   id="level"
+                   name="level">
+        </div>
+
+        <div class="inputContainer">
+            <label for="platform">Platform: </label>
+            <input type="text"
+                   id="platform"
+                   name="platform">
+        </div>
+
+        <div class="inputContainer">
+            <label for="last_connection">Last connection: </label>
+            <input type="datetime-local"
+                   id="last_connection"
+                   name="last_connection">
+        </div>
+
+        <div class="inputContainer editorField">
+            <label for="profile_pic">Profile picture: </label>
+            <input accept="image/png, image/jpeg"
+                   type="file" id="profile_pic"
+                   name="profile_pic">
+        </div>
+
+        <div class="inputContainer editorField">
+            <input id="submit" type="submit" value="Ajouter">
+            <input id="deleteButton" type="reset" value="Supprimer">
+        </div>
+    </form>
+
+    <div>
+        <input class="navigation" id="firstPageNav" type="button" value="<<"/>
+        <input class="navigation" id="previousPageNav" type="button" value="<"/>
+        <input class="navigation" id="nextPageNav" type="button" value=">"/>
+        <input class="navigation" id="lastPageNav" type="button" value=">>"/>
+    </div>
+
+    <div>
+        <label for="pageCount">Page count: </label>
+        <select id="pageCount" class="navigation" onchange="updatePageDetails()">
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="40">40</option>
+            <option selected value="50">50</option>
+            <option value="60">60</option>
+            <option value="70">70</option>
+            <option value="80">80</option>
+            <option value="90">90</option>
+            <option value="100">100</option>
+        </select>
+    </div>
+
+    <div><a id="pdfDownloadLink" href="#">Télécharger en PDF</a></div>
+
+    <div><p>Page: <span id="currentPage">0</span> / <span id="lastPage">0</span></p></div>
+
+    <table>
+        <thead>
+            <tr>
+                <th class="orderByHeader" onclick="changeOrderBy(this, 'id')">ID</th>
+                <th class="orderByHeader" onclick="changeOrderBy(this, 'username')">Username</th>
+                <th class="orderByHeader" onclick="changeOrderBy(this, 'level')">Level</th>
+                <th class="orderByHeader" onclick="changeOrderBy(this, 'last_connection')">Last connection</th>
+                <th class="editorField">Delete</th>
+            </tr>
+        </thead>
+        <tbody id="playersContainer">
+            <!-- Players -->
+        </tbody>
+    </table>
+
+    <script src="./js/constants.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+/node_modules/
+/pgpass.conf
+/uploads/*
+/public/js/constants.js

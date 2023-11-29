@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+
+<div id="formContainer">
+    <form id="formConnexion">
+        <p class="title">Se connecter</p>
+        <label>
+            Username:
+            <input id="usernameConnexion" type="text">
+        </label>
+        <br><br>
+        <label>
+            Password:
+            <input id="passwordConnexion" type="password">
+        </label>
+        <br><br>
+        <input type="reset" value="Annuler">
+        <input type="button" value="Se connecter" onclick="connexion()">
+    </form>
+
+    <form id="formInscription">
+        <p class="title">S'inscrire</p>
+        <label>
+            Username:
+            <input id="usernameInscription" type="text">
+        </label>
+        <br><br>
+        <label>
+            Password:
+            <input id="passwordInscription" type="password">
+        </label>
+        <br><br>
+        <input type="reset" value="Annuler">
+        <input type="button" value="Se connecter" onclick="inscription()">
+    </form>
+</div>
+<br>
+<span id="infoMessage"></span>
+<script src="./js/constants.js"></script>
+<script src="./js/login.js"></script>
+</body>
+</html>

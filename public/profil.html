@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Players</title>
+    <link rel="stylesheet" href="./css/profil.css">
+</head>
+<body>
+
+<div class="loginContainer">
+    <button onclick="redirect(htmlRedirect)">Retour</button>
+    <button onclick="redirect(loginURL)">Se déconnecter</button>
+    <button onclick="unsubscribe()">Se désabonner</button>
+</div>
+
+<div class="container">
+    <div class="infoContainer">
+        <span> Utilisateur connecté: </span>
+        <span id="userContainer"></span>
+    </div>
+
+    <div class="infoContainer">
+        <span> Rôle: </span>
+        <span id="roleContainer"></span>
+    </div>
+
+    <div class="infoContainer">
+        <a id="editorMailLink" href="#"> Demander à devenir un membre éditeur: </a>
+    </div>
+</div>
+
+<form class="container">
+    <p class="title">Inscrivez votre nouveau mot de passe</p>
+    <label>
+        Password:
+        <input id="newPassword" type="password">
+    </label>
+    <br><br>
+    <input type="reset" value="Annuler">
+    <input type="button" value="Confirmer" onclick="changePassword()">
+</form>
+
+<script src="./js/constants.js"></script>
+<script src="./js/profil.js"></script>
+
+</body>
+</html>
